@@ -56,6 +56,8 @@ if __name__ == '__main__':
         #for loc, data in covariance.items():
             #sampling the burnup
             mean = float(data[0])
+            # uncertainties are given as a percentage so they have to be
+            # converted to their absolute values
             std = float(data[0]*float[1]/100)
             BU = np.random.normal(mean, std)
             core_comp[element]= get_compositions(BU).comp
